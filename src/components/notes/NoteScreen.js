@@ -10,12 +10,12 @@ export default function NoteScreen() {
   const { active: note } = useSelector((state) => state.notes);
   const [formValues, handleInputChange, reset] = useForm(note);
 
-  const { id, title, body, url, date } = formValues;
+  const { title, body } = formValues;
 
   const activeId = useRef(note.id);
 
   useEffect(() => {
-    console.log("NoteScreen useEffect");
+   
     if(note.id !== activeId.current){
         reset(note)
         activeId.current = note.id;
@@ -24,7 +24,7 @@ export default function NoteScreen() {
   }, [note, reset]);
 
   useEffect(() => {
-    console.log("NoteScreen useEffect 2");
+    
     dispatch(activeNote(formValues.id, {...formValues}));
   },[formValues,dispatch])
 

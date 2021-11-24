@@ -3,10 +3,14 @@ import { collection, query, getDocs } from "@firebase/firestore";
 
 export const loadNotes = async (uid) => {
 
+  
   const notesSanp = await getDocs(
     query(collection(db, `${uid}`, "journal/notes"))
   );
+  
   const notes = [];
+
+ 
 
   notesSanp.forEach((note) => {
     notes.push({
@@ -14,6 +18,9 @@ export const loadNotes = async (uid) => {
       ...note.data(),
     });
   })
-  return notes;
+
+  return notes.sort(function(a, b) {
+    return  b.date - a.date;
+  });
   
 };

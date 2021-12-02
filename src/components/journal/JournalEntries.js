@@ -7,7 +7,7 @@ export default function JournalEntries (){
 
     const { notes } = useSelector(state => state.notes)
 
-    console.log("notes despues", notes)
+    //console.log("notes despues", notes)
 
     return (
        <div className="journal__entries">

@@ -12,8 +12,8 @@ import { startLoadingNotes } from "../actions/notes";
 
 export default function AppRouter() {
 
-  console.log("NODE_ENV",process.env.NODE_ENV)
-  console.log("CLOUDINARY",process.env.REACT_APP_CLOUDINARY_URL)
+  //console.log("NODE_ENV",process.env.NODE_ENV)
+  //console.log("CLOUDINARY",process.env.REACT_APP_CLOUDINARY_URL)
 
   const dispatch = useDispatch()
   const [checking, setCheking] = useState(true);
